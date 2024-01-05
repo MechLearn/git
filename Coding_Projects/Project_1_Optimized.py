@@ -37,3 +37,6 @@ def play_game():
 
 while True:
     play_game()
+    play_again = input("Do you want to play again? (Y/N): " ).lower()
+    if play_again != "Y":
+        break 
