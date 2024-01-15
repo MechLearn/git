@@ -15,7 +15,7 @@ def main():
         choice = input("Enter you choice (1-4): ")
         
         
-        if choice == 1:
+        if choice == '1':
             name = input("Enter name: ")
             email = input("Enter Email: ")
             phone = input("Enter Phone: ")
@@ -24,14 +24,14 @@ def main():
             my_contact_list.add_contacts(new_contact)
             print("Contact added sucessfully")
         
-        elif choice == 2:
+        elif choice == '2':
             print(" -------- Contact List -------")
             my_contact_list.display_contacts()
         
-        elif choice == 3:
+        elif choice == '3':
             index_to_remove = int(input("Enter the index of the contact to remove: "))
             my_contact_list.remove_contacts(index_to_remove)
-        elif choice == 4:
+        elif choice == '4':
             break
         
         else:

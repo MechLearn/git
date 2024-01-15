@@ -33,13 +33,13 @@ class ContactList:
     ## metodo guardar contactos 
     
     def save_contacts(self):
-       with open('contacts.pk1', 'rb') as file:
-            pickle.dumb(self.contacts, file) 
+       with open('contacts.pk1', 'wb') as file:
+            pickle.dump(self.contacts, file) 
             
         
     def load_contacts(self):
         try:
            with open('contacts.pk1', 'rb') as file:
             self.contacts = pickle.load(file)
-        except FileNotFoundError:
-           pass   
+        except (FileNotFoundError, EOFError):
+         self.contacts = []  
