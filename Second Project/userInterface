@@ -1,5 +1,6 @@
 from Contacts import Contact
 from Update import ContactList
+from Contacts import Favorite
 
 
 def main():
@@ -8,9 +9,10 @@ def main():
     
     while True:
         print(" 1. Add Contact ")
-        print(" 2. Display Contact ")
-        print(" 3. Remove Contact ")
-        print(" 4. Exit ")
+        print(" 2. Add vip Contact ")
+        print(" 3. Display Contact ")
+        print(" 4. Remove Contact ")
+        print(" 5. Exit ")
         
         choice = input("Enter you choice (1-4): ")
         
@@ -25,13 +27,24 @@ def main():
             print("Contact added sucessfully")
         
         elif choice == '2':
+            name = input("Enter name: ")
+            email = input("Enter Email: ")
+            phone = input("Enter Phone: ")
+            birthday = input(" Enter date of birthday: ")
+            
+            new_contact = Favorite(name, email, phone, birthday)
+            my_contact_list.add_contacts(new_contact)
+            print("Favorite Contact added sucessfully")
+            
+        
+        elif choice == '3':
             print(" -------- Contact List -------")
             my_contact_list.display_contacts()
         
-        elif choice == '3':
+        elif choice == '4':
             index_to_remove = int(input("Enter the index of the contact to remove: "))
             my_contact_list.remove_contacts(index_to_remove)
-        elif choice == '4':
+        elif choice == '5':
             break
         
         else:
